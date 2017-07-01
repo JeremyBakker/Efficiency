@@ -1,4 +1,6 @@
 def return_max_profit(prices):
+    if len(prices) < 2:
+        raise IndexError('There must be at least two prices to compare.')
     max_profit = prices[1] - prices[0]
     min_price = prices[0]
     max_price = prices[0]
@@ -8,3 +10,6 @@ def return_max_profit(prices):
         max_profit = max(max_profit, possible_return)
         min_price = min(price, min_price)
     return max_profit
+
+def reduce_without_index(numbers):
+    pass
