@@ -10,8 +10,8 @@ class TestProblemSolving(unittest.TestCase):
         self.assertEqual(return_max_profit([15, 14, 12, 6, 11, 25]), 19)
         self.assertEqual(return_max_profit([15, 14, 12, 6, 5, 4]), 0)
 
-    # def test_reduce_without_index(self):
-        # self.assertEqual(reduce_without_index([1,7,3,4]), [84,12,28,21])
+    def test_reduce_without_index(self):
+        self.assertEqual(reduce_without_index([1,7,3,4]), [84,12,28,21])
 
 if __name__ == '__main__':
     unittest.main()
