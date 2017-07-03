@@ -1,5 +1,5 @@
 import unittest
-from learn import return_max_profit, reduce_without_index, binary_search
+from learn import return_max_profit, binary_search, highest_product_of_three
 class TestProblemSolving(unittest.TestCase):
 
     def test_return_max_profit(self):
@@ -13,8 +13,9 @@ class TestProblemSolving(unittest.TestCase):
         self.assertTrue(binary_search(8, [1,2,8,45,1203819283]))
         self.assertFalse(binary_search(1, [2,3,5,7,89,120]))
 
-    def test_reduce_without_index(self):
-        self.assertEqual(reduce_without_index([1,7,3,4]), [84,12,28,21])
+    def test_highest_product_of_three(self):
+        self.assertEqual(highest_product_of_three([1, 5, 20, -1]), 100)
+        self.assertEqual(highest_product_of_three([-1, 1, -50, -2]), 100)
 
 if __name__ == '__main__':
     unittest.main()

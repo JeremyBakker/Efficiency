@@ -43,15 +43,29 @@ def binary_search(target, numbers):
             lowest_index = guess_index
     return False
 
+def highest_product_of_three(numbers):
+    '''
+    This function returns the highest product of three numbers. It uses a 
+    'greedy' algorithmic approach.
 
-def reduce_without_index(numbers):
-    # i = 0
-    # numbers_after_index = numbers[i:]
-    # product_before_index = 1
-    # while i < len(numbers):
-    #     product_before_index *= numbers[i:]
-    #     print(product_before_index)
-    #     i += 1
-    # # final_product = numbers_before_index * numbers_after_index
-    final_product = [84, 12, 28, 21]
-    return final_product
+    ---Arguments---
+    numbers (list): a list of integers
+    '''
+    highest_number = max(numbers[0], numbers[1])
+    lowest_number = min(numbers[0], numbers[1])
+    highest_two = numbers[0] * numbers[1]
+    lowest_two = numbers[0] * numbers[1]
+    highest_three = numbers[0] * numbers[1] * numbers[2]
+
+    i = 2
+    while i < len(numbers):
+        highest_three = max(highest_three, numbers[i] * highest_two, numbers[i] * lowest_two)
+
+        highest_two = max(highest_two, numbers[i] * highest_number, numbers[i] * lowest_number)
+        lowest_two = min(lowest_two, numbers[i] * highest_number, numbers[i] * lowest_number)
+
+        highest_number = max(highest_number, numbers[i])
+        lowest_number = min(lowest_number, numbers[i])
+        i+=1
+
+    return highest_three
