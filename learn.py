@@ -45,12 +45,15 @@ def binary_search(target, numbers):
 
 def highest_product_of_three(numbers):
     '''
-    This function returns the highest product of three numbers. It uses a 
-    'greedy' algorithmic approach.
+    This function returns the highest product of three numbers from a list of 
+    more than three numbers. It uses a 'greedy' algorithmic approach.
 
     ---Arguments---
     numbers (list): a list of integers
     '''
+    if len(numbers) < 3:
+        raise IndexError('The list must contain more than three numbers')
+
     highest_number = max(numbers[0], numbers[1])
     lowest_number = min(numbers[0], numbers[1])
     highest_two = numbers[0] * numbers[1]

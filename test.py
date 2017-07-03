@@ -16,6 +16,7 @@ class TestProblemSolving(unittest.TestCase):
     def test_highest_product_of_three(self):
         self.assertEqual(highest_product_of_three([1, 5, 20, -1]), 100)
         self.assertEqual(highest_product_of_three([-1, 1, -50, -2]), 100)
+        self.assertRaises(IndexError, highest_product_of_three, [1,2])
 
 if __name__ == '__main__':
     unittest.main()
