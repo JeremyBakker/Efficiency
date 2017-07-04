@@ -1,5 +1,5 @@
 import unittest
-from learn import return_max_profit, binary_search, highest_product_of_three
+from learn import return_max_profit, binary_search, highest_product_of_three, is_unique
 class TestProblemSolving(unittest.TestCase):
 
     def test_return_max_profit(self):
@@ -17,6 +17,11 @@ class TestProblemSolving(unittest.TestCase):
         self.assertEqual(highest_product_of_three([1, 5, 20, -1]), 100)
         self.assertEqual(highest_product_of_three([-1, 1, -50, -2]), 100)
         self.assertRaises(IndexError, highest_product_of_three, [1,2])
+
+    def test_is_unique(self):
+        self.assertRaises(ValueError, is_unique, '')
+        self.assertEqual(is_unique("abcdefghijklmnop"), True)
+        self.assertEqual(is_unique("aaabdflkjafna;lkj"), False)
 
 if __name__ == '__main__':
     unittest.main()
