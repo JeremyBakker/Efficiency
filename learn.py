@@ -107,3 +107,27 @@ def is_unique_without_addition(string):
         if string.count(character) > 1:
             return False
     return True
+
+
+def solution(N):
+    '''
+    This function, given a positive integer N, returns the length of its 
+    longest binary gap. The function returns 0 if N doesn't contain a binary 
+    gap.
+
+    ---Arguments---
+    N (int): an integer less than 2,147,483,647
+    '''
+    def solution(N):
+    current_count = 0
+    solution_count = 0
+    for digit in str(bin(N))[2:]:
+        if digit == "0":
+            current_count += 1
+        solution_count = max(current_count, solution_count)
+        if digit == "1":
+            current_count = 0
+    if solution_count == 0:
+        return 0
+    else:
+        return solution_count
