@@ -74,7 +74,7 @@ def highest_product_of_three(numbers):
     return highest_three
 
 def is_unique(string):
-    '''This function determines whether a string has all unique characters
+    '''This function determines whether a string has all unique characters.
 
     ---Arguments---
     string (string): a string of characters
@@ -91,4 +91,19 @@ def is_unique(string):
             return False
         else:
             character_set[value] = True
+    return True
+
+def is_unique_without_addition(string):
+    '''This function determines whether a string has all unique characters 
+    without using additional data structures.
+
+    ---Arguments---
+    string (string): a string of characters
+    '''
+    if len(string) > 128:
+        return False
+
+    for character in string:
+        if string.count(character) > 1:
+            return False
     return True
