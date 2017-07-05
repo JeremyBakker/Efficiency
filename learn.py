@@ -109,7 +109,7 @@ def is_unique_without_addition(string):
     return True
 
 
-def solution(N):
+def binary_gap(N):
     '''
     This function, given a positive integer N, returns the length of its 
     longest binary gap. The function returns 0 if N doesn't contain a binary 
@@ -118,16 +118,32 @@ def solution(N):
     ---Arguments---
     N (int): an integer less than 2,147,483,647
     '''
-    def solution(N):
-    current_count = 0
+    N = str(bin(N)[2:])
+    count = 0
     solution_count = 0
-    for digit in str(bin(N))[2:]:
-        if digit == "0":
-            current_count += 1
-        solution_count = max(current_count, solution_count)
-        if digit == "1":
-            current_count = 0
-    if solution_count == 0:
-        return 0
-    else:
-        return solution_count
+    for x in range(len(N)):
+        if N[x] == "0":
+            count += 1
+        if N[x] == "1":
+            solution_count = max(count, solution_count)
+            count = 0
+    return solution_count
+
+def shift_array(A, K):
+    '''
+    This function, given a zero-indexed array A consisting of N integers and an 
+    integer K, returns the array A rotated K times.
+
+    ---Arguments---
+    A (list): a list of integers
+    K (int): an integer
+    '''
+    if len(A) == 1:
+        return A
+    B = [0 for _ in range(len(A))]
+    for i in range(len(A)):
+        if i + K > (len(A) - 1):
+            B[i + K - len(A)] = A[i]
+        else:
+            B[i + K] = A[i]
+    return B

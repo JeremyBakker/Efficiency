@@ -1,6 +1,6 @@
 import unittest
 from learn import return_max_profit, binary_search, highest_product_of_three, \
-is_unique, is_unique_without_addition
+is_unique, is_unique_without_addition, binary_gap
 class TestProblemSolving(unittest.TestCase):
 
     def test_return_max_profit(self):
@@ -27,6 +27,11 @@ class TestProblemSolving(unittest.TestCase):
     def test_is_unique_without_addition(self):
         self.assertEqual(is_unique("abcdefghijklmnop"), True)
         self.assertEqual(is_unique("aaabdflkjafna;lkj"), False)
+
+    def test_binary_gap(self):
+        self.assertEqual(binary_gap(1041), 5)
+        self.assertEqual(binary_gap(20), 1)
+        self.assertEqual(binary_gap(15), 0)
 
 if __name__ == '__main__':
     unittest.main()
