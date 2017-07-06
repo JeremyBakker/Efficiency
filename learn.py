@@ -149,13 +149,26 @@ def shift_array(A, K):
     return B
 
 def integer_pairs(A):
-'''
-This function, given an array A consisting of N integers, returns the value of 
-the unpaired element.
+    '''
+    This function, given an array A consisting of N integers, returns the value of 
+    the unpaired element.
 
----Arguments---
-A (list): a list of integers with one unpaired integer
-'''
+    ---Arguments---
+    A (list): a list of integers with one unpaired integer
+    '''
     for integer in A:
         if A.count(integer) == 1:
             return integer
+
+def find_missing_element(A):
+    '''
+    This function, given a zero-indexed array A, returns the value of the 
+    missing element in the series.
+
+    ---Arguments---
+    A (list): a list of sequential integers missing one element in the sequence
+    '''
+    xor = len(A) + 1
+    for a, i in enumerate(A, 1):
+        xor = xor ^ a ^ i
+    return xor
