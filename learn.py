@@ -147,3 +147,15 @@ def shift_array(A, K):
         else:
             B[i + K] = A[i]
     return B
+
+def integer_pairs(A):
+'''
+This function, given an array A consisting of N integers, returns the value of 
+the unpaired element.
+
+---Arguments---
+A (list): a list of integers with one unpaired integer
+'''
+    for integer in A:
+        if A.count(integer) == 1:
+            return integer
