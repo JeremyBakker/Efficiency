@@ -1,6 +1,7 @@
 import unittest
 from learn import return_max_profit, binary_search, highest_product_of_three, \
-is_unique, is_unique_without_addition, binary_gap
+is_unique, is_unique_without_addition, binary_gap, find_missing_element,\
+integer_pairs
 class TestProblemSolving(unittest.TestCase):
 
     def test_return_max_profit(self):
@@ -32,6 +33,14 @@ class TestProblemSolving(unittest.TestCase):
         self.assertEqual(binary_gap(1041), 5)
         self.assertEqual(binary_gap(20), 1)
         self.assertEqual(binary_gap(15), 0)
+
+    def test_integer_pairs(self):
+        self.assertEqual(integer_pairs([1,2,3,7,4,3,1,2]), 7)
+        self.assertEqual(integer_pairs([2,2,3,3,7,7,8,4,3,3,5,6,4,5,6]), 8)
+
+    def test_find_missing_element(self):
+        self.assertEqual(find_missing_element([1,2,3,5]), 4)
+        self.assertEqual(find_missing_element([1,2,3,4,5,6,7,8,9,11,12]), 10)
 
 if __name__ == '__main__':
     unittest.main()
