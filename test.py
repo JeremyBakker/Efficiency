@@ -1,7 +1,7 @@
 import unittest
 from learn import return_max_profit, binary_search, highest_product_of_three, \
 is_unique, is_unique_without_addition, binary_gap, find_missing_element,\
-integer_pairs
+integer_pairs, string_compression
 class TestProblemSolving(unittest.TestCase):
 
     def test_return_max_profit(self):
@@ -41,6 +41,11 @@ class TestProblemSolving(unittest.TestCase):
     def test_find_missing_element(self):
         self.assertEqual(find_missing_element([1,2,3,5]), 4)
         self.assertEqual(find_missing_element([1,2,3,4,5,6,7,8,9,11,12]), 10)
+
+    def test_string_compression(self):
+        self.assertEqual(string_compression('AABBBCAAAA'), 'A2B3C1A4')
+        self.assertEqual(string_compression('abcdef'), 'abcdef')
+
 
 if __name__ == '__main__':
     unittest.main()

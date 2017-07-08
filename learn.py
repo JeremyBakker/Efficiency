@@ -172,3 +172,17 @@ def find_missing_element(A):
     for a, i in enumerate(A, 1):
         xor = xor ^ a ^ i
     return xor
+
+def string_compression(string):
+    compressed_string = []
+    count = 0
+
+    for i in range(len(string)):
+        if i != 0 and string[i] != string[i-1]:
+            compressed_string.append(string[i-1] + str(count))
+            count = 0
+        count +=1
+
+    compressed_string.append(string[-1] + str(count))
+
+    return min(string, "".join(compressed_string), key=len)
