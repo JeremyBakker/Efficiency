@@ -1,7 +1,7 @@
 import unittest
 from learn import return_max_profit, binary_search, highest_product_of_three, \
 is_unique, is_unique_without_addition, binary_gap, find_missing_element,\
-integer_pairs, string_compression
+integer_pairs, string_compression, check_permutation
 class TestProblemSolving(unittest.TestCase):
 
     def test_return_max_profit(self):
@@ -45,6 +45,10 @@ class TestProblemSolving(unittest.TestCase):
     def test_string_compression(self):
         self.assertEqual(string_compression('AABBBCAAAA'), 'A2B3C1A4')
         self.assertEqual(string_compression('abcdef'), 'abcdef')
+
+    def test_check_permutation(self):
+        self.assertEqual(check_permutation(['abba', 'baaa']), False)
+        self.assertEqual(check_permutation(['abbacc', 'bccbaa']), True)
 
 
 if __name__ == '__main__':

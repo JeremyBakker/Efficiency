@@ -174,6 +174,15 @@ def find_missing_element(A):
     return xor
 
 def string_compression(string):
+    '''
+    This function compresses a string of characters, replacing repetitive 
+    characters in a series with numbers if the compressed string is shorter 
+    than the original string (i.e., string_compression("AAABBCCCC") returns 
+    A3B2C4).
+
+    ---Arguments---
+    string (string): a string of characters
+    '''
     compressed_string = []
     count = 0
 
@@ -186,3 +195,23 @@ def string_compression(string):
     compressed_string.append(string[-1] + str(count))
 
     return min(string, "".join(compressed_string), key=len)
+
+def check_permutation(list_of_two_strings):
+    '''
+    This function determines whether two strings are permutations of each other
+
+    ---Arguments---
+    list_of_two_strings (list): a list of two strings
+    '''
+    str1 = list_of_two_strings[0]
+    str2 = list_of_two_strings[1]
+    if len(str1) != len(str2):
+        return False
+    dic = dict()
+    for c in str1:
+        dic[c] = dic.get(c, 0) + 1
+    for c in str2:
+        if dic[c] == 0:
+            return False
+        dic[c] -= 1
+    return True
