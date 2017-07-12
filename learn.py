@@ -215,3 +215,19 @@ def check_permutation(list_of_two_strings):
             return False
         dic[c] -= 1
     return True
+
+def isSubstring(s1, s2):
+    '''
+    This function determines whether one string is a substring of another.
+
+    ---Arguments---
+    s1(string): a string
+    s2(string): a string
+    '''
+    if len(s1) != len(s2):
+        return False
+    if sorted(s1) != sorted(s2):
+        return False
+    if s1 not in (s2 + s2):
+        return False
+    return True 

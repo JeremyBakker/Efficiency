@@ -1,7 +1,8 @@
 import unittest
 from learn import return_max_profit, binary_search, highest_product_of_three, \
 is_unique, is_unique_without_addition, binary_gap, find_missing_element,\
-integer_pairs, string_compression, check_permutation
+integer_pairs, string_compression, check_permutation, isSubstring
+
 class TestProblemSolving(unittest.TestCase):
 
     def test_return_max_profit(self):
@@ -49,6 +50,12 @@ class TestProblemSolving(unittest.TestCase):
     def test_check_permutation(self):
         self.assertEqual(check_permutation(['abba', 'baaa']), False)
         self.assertEqual(check_permutation(['abbacc', 'bccbaa']), True)
+
+    def test_isSubstring(self):
+        self.assertEqual(isSubstring("waterbottle", "erbottlewat"), True)
+        self.assertEqual(isSubstring("dog", "cat"), False)
+        self.assertEqual(isSubstring("dog", "god"), False)
+        self.assertEqual(isSubstring("dog", "gdo"), True)
 
 
 if __name__ == '__main__':
