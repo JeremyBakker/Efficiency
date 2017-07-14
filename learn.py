@@ -231,3 +231,39 @@ def isSubstring(s1, s2):
     if s1 not in (s2 + s2):
         return False
     return True 
+
+def fizzbuzz(n):
+    solution = []
+    for digit in range(1,n+1):
+        if digit % 3 == 0 and digit % 5 == 0:
+            solution.append('FizzBuzz')
+        elif digit % 3 == 0:
+            solution.append('Fizz')
+        elif digit % 5 == 0:
+            solution.append('Buzz')
+        else:
+            solution.append(digit)
+    return solution
+
+def find_odd_occurrences(seq):
+    for i in seq:
+        if seq.count(i)%2!=0:
+            return i
+
+def alphabet_position(text):
+    return ' '.join(str(ord(c) - 96) for c in text.lower() if c.isalpha())
+
+def findTheDifference(s, t):
+        """
+        :type s: str
+        :type t: str
+        :rtype: str
+        """
+        dict ={}
+        for letter in s:
+            dict[letter] = dict.get(letter, 0) + 1
+        for letter in t:
+            if dict.get(letter,0) == 0:
+                return letter
+            else:
+                dict[letter] -= 1
