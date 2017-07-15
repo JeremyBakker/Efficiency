@@ -233,6 +233,15 @@ def isSubstring(s1, s2):
     return True 
 
 def fizzbuzz(n):
+    '''
+    This function accepts a number as an argument and returns a list of numbers
+    beginning with one and ending with the argument. Multiples of three are 
+    replaced with the word 'Fizz.' Multiples of five are replaced with the word
+    'Buzz'. Multiples of three and five are replaced with the word 'FizzBuzz'.
+
+    ---Arguments---
+    n(integer): an integer
+    '''
     solution = []
     for digit in range(1,n+1):
         if digit % 3 == 0 and digit % 5 == 0:
@@ -246,18 +255,33 @@ def fizzbuzz(n):
     return solution
 
 def find_odd_occurrences(seq):
+    '''
+    This function returns the odd number in a sequence of numbers.
+
+    ---Arguments---
+    seq (list): a list of even numbers and one odd number
+    '''
     for i in seq:
         if seq.count(i)%2!=0:
             return i
 
 def alphabet_position(text):
+    '''
+    This function returns the numerical position of letters in the alphabet.
+
+    ---Argument---
+    text(string): a string
+    '''
     return ' '.join(str(ord(c) - 96) for c in text.lower() if c.isalpha())
 
 def findTheDifference(s, t):
         """
-        :type s: str
-        :type t: str
-        :rtype: str
+        This function returns the difference between two strings.
+
+        ---Arguments---
+        s(string):  a string
+        t(string):  a string that mirrors the 's' string and adds an additional
+                    character
         """
         dict ={}
         for letter in s:
